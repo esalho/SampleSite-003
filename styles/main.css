@@ -1,0 +1,41 @@
+@import url(additional.css);
+:root {
+  --primary-color: #ffc857;
+  --primary-bg: #767673;
+  --text-color: #191816;
+  --content-color: #bfbfbf;
+  --accent-color: #e4e4e4;
+  --main-font: Arial, Helvetica, sans-serif;
+  --main-width: 120vh;
+  --content-width: 100vh;
+}
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+header {
+  width: var(--main-width);
+  margin: auto;
+  h1 {
+    color: var(--text-color);
+    font-size: 3em;
+  }
+}
+nav {
+  width: var(--main-width);
+  margin: auto;
+  padding: 2vh;
+}
+main {
+  width: var(--content-width);
+  margin: auto;
+  padding: 5vh;
+  background-color: var(--content-color);
+}
+footer {
+  display: block;
+  width: var(--main-width);
+  margin: auto;
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+a:link,
+a:visited,
+a:active {
+  color: var(--text-color);
+}
+a:hover {
+  color: var(--accent-color);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.align-left {
+  float: left;
+  max-width: 400px;
+  margin-right: 2vh;
+}
+.align-right {
+  float: right;
+  max-width: 400px;
+  margin-left: 2vh;
+}
