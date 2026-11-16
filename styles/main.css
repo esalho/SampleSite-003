@@ -1,43 +1,156 @@
-@import url(additional.css);
+/* =========================================================
+   ASETUKSET – muuta värit ja fontit tästä
+   ========================================================= */
 :root {
-  --primary-color: #ffc857;
-  --primary-bg: #767673;
-  --text-color: #191816;
-  --content-color: #bfbfbf;
-  --accent-color: #e4e4e4;
-  --main-font: Arial, Helvetica, sans-serif;
-  --main-width: 120vh;
-  --content-width: 100vh;
+  --tausta: #f7f5f0; /* sivun taustaväri */
+  --teksti: #222222; /* tekstin väri */
+  --korostus: #2449a9; /* otsikot ja yläosan tausta */
+  --heikko-teksti: #555555; /* kuvatekstit */
+
+  --fontti-otsikot: Georgia, "Times New Roman", serif;
+  --fontti-teksti: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --sivun-leveys: 60rem; /* sisällön maksimileveys */
+  --vali: 2rem; /* väli kuvan ja tekstin välissä */
+  --pyoristys: 12px; /* kuvien kulmien pyöristys */
 }
+
+/* =========================================================
+   PERUSTYYLIT
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: var(--primary-bg);
-  color: var(--text-color);
-  font-family: var(--main-font);
+  margin: 0;
+  background: var(--tausta);
+  color: var(--teksti);
+  font-family: var(--fontti-teksti);
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
-header {
-  width: var(--main-width);
-  margin: auto;
-  h1 {
-    color: var(--text-color);
-    font-size: 3em;
-  }
-}
-nav {
-  width: var(--main-width);
-  margin: auto;
-  padding: 2vh;
-}
-main {
-  width: var(--content-width);
-  margin: auto;
-  padding: 5vh;
-  background-color: var(--content-color);
-  border-radius: 20px;
-}
-footer {
+
+img {
   display: block;
-  width: var(--main-width);
-  margin: auto;
-  padding: 2vh;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2 {
+  font-family: var(--fontti-otsikot);
+  line-height: 1.2;
+}
+
+h2 {
+  color: var(--korostus);
+  margin-top: 0;
+}
+
+a {
+  color: var(--korostus);
+}
+
+/* =========================================================
+   SIVUN YLÄOSA
+   ========================================================= */
+.sivun-otsikko {
+  background: var(--korostus);
+  color: #ffffff;
   text-align: center;
+  padding: 4rem 1rem;
+}
+
+.sivun-otsikko h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin: 0 0 0.5rem;
+}
+
+.ingressi {
+  max-width: 40rem;
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+
+main {
+  max-width: var(--sivun-leveys);
+  margin: 0 auto;
+  padding: var(--vali) 1rem;
+}
+
+/* =========================================================
+   KOHTA = teksti + kuva vierekkäin
+   ---------------------------------------------------------
+   flex-wrap: wrap  -> jos tila ei riitä, kuva siirtyy
+   automaattisesti tekstin alle. Ei tarvita media queryjä.
+   ========================================================= */
+.kohta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* vaihda "flex-start", jos haluat kuvan ylös */
+  gap: var(--vali);
+  margin-block: calc(var(--vali) * 2);
+}
+
+/* Teksti vie 3 osaa, kuva 2 osaa. Viimeinen luku on
+   minimileveys, jonka alle mentäessä rivi rivittyy. */
+.kohta .teksti {
+  flex: 3 1 20rem;
+}
+
+.kohta figure {
+  flex: 2 1 16rem;
+  margin: 0;
+}
+
+/* Kuva vasemmalle: käännetään rivin suunta */
+.kohta.kuva-vasemmalla {
+  flex-direction: row-reverse;
+}
+
+/* Pienempi kuva */
+.kohta.kuva-pieni figure {
+  flex: 1 1 10rem;
+}
+
+/* =========================================================
+   KUVAT JA KUVATEKSTIT
+   ========================================================= */
+figure img {
+  width: 100%;
+  border-radius: var(--pyoristys);
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--heikko-teksti);
+}
+
+.levea-kuva {
+  margin: calc(var(--vali) * 2) 0;
+}
+
+/* =========================================================
+   LÄHTEET JA ALATUNNISTE
+   ========================================================= */
+.lahteet {
+  margin-top: calc(var(--vali) * 2);
+  padding-top: var(--vali);
+  border-top: 2px solid var(--korostus);
+  font-size: 0.95rem;
+}
+
+.lahteet a {
+  overflow-wrap: anywhere; /* pitkät osoitteet eivät levitä sivua */
+}
+
+footer {
+  text-align: center;
+  padding: var(--vali) 1rem;
+  font-size: 0.9rem;
+  color: var(--heikko-teksti);
 }

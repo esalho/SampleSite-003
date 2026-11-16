@@ -1,92 +1,112 @@
 <!doctype html>
 <html lang="fi">
   <head>
-    <!-- Tärkeimmät -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sivuston nimi</title>
-    <meta name="description" content="Sivuston kuvausteksti." />
-
-    <!-- CSS tyylit -->
+    <title>Aiheen nimi</title>
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <header>
-      <!-- Jokaisella sivulla tulisi olla vain yksi H1 tason otsikko, joka kertoo yksiselitteisesti sivun tarkoituksen -->
-      <h1>Sivun pääotsikko</h1>
+    <!-- ===== SIVUN YLÄOSA ===== -->
+    <header class="sivun-otsikko">
+      <h1>Aiheen nimi</h1>
+      <p class="ingressi">
+        Lyhyt johdanto aiheeseen. Kerro yhdellä tai kahdella lauseella, mistä
+        sivulla kerrotaan.
+      </p>
     </header>
-    <nav>
-      <a href="#osio-1">Linkki 1</a>
-      <a href="#">Linkki 2</a>
-      <a href="#">Linkki 3</a>
-    </nav>
+
     <main>
-      <h2>Otsikko h2</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates et
-        alias perspiciatis debitis assumenda illo consequatur, quibusdam ducimus
-        veniam asperiores recusandae totam nihil, ratione repellendus veritatis
-        sit dolores laborum inventore!
-      </p>
-      <img src="img/c2d3675cd85c3c67.jpeg" class="align-left" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
-      <img src="img/c2d3675cd85c3c67.jpeg" class="align-right" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
-      <img src="img/c2d3675cd85c3c67.jpeg" />
-      <h2 id="osio-1">Liirum laarum</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime
-        voluptatum, autem facere, laboriosam labore facilis cum obcaecati, quas
-        ipsum dolores blanditiis? Explicabo pariatur numquam suscipit reiciendis
-        non architecto iusto.
-      </p>
+      <!-- ===== KOHTA: kuva OIKEALLA (oletus) =====
+         Teksti on koodissa ensin, jotta otsikko luetaan ennen kuvaa
+         (esim. ruudunlukija). Kapealla näytöllä kuva menee tekstin alle. -->
+      <section class="kohta">
+        <div class="teksti">
+          <h2>Ensimmäinen väliotsikko</h2>
+          <p>
+            Tähän tulee tekstiä aiheesta. Kirjoita lyhyitä kappaleita – verkossa
+            luetaan silmäillen.
+          </p>
+          <p>Toinen kappale. Teksti asettuu automaattisesti kuvan viereen.</p>
+        </div>
+        <figure>
+          <img
+            src="img/c2d3675cd85c3c67.jpeg"
+            alt="Kuvaile tähän, mitä kuvassa näkyy"
+          />
+          <figcaption>Kuvateksti. Kuva: Kuvaajan nimi / lähde</figcaption>
+        </figure>
+      </section>
+
+      <!-- ===== KOHTA: kuva VASEMMALLA =====
+         Lisää luokka "kuva-vasemmalla". Muuta ei tarvitse muuttaa. -->
+      <section class="kohta kuva-vasemmalla">
+        <div class="teksti">
+          <h2>Toinen väliotsikko</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae sunt animi necessitatibus, sed quasi labore fugiat minus architecto nostrum repellendus quas magni. Quam fugiat odit tempora, impedit debitis eius aut?
+          </p>
+          <ul>
+            <li>Listat toimivat myös</li>
+            <li>Kuten tavallinen teksti</li>
+          </ul>
+        </div>
+        <figure>
+          <img
+            src="img/c2d3675cd85c3c67.jpeg"
+            alt="Kuvaile tähän, mitä kuvassa näkyy"
+          />
+          <figcaption>Kuvateksti. Kuva: Kuvaajan nimi / lähde</figcaption>
+        </figure>
+      </section>
+
+      <!-- ===== KOHTA: PIENI kuva =====
+         Lisää luokka "kuva-pieni". Voi yhdistää: "kohta kuva-vasemmalla kuva-pieni" -->
+      <section class="kohta kuva-pieni">
+        <div class="teksti">
+          <h2>Kolmas väliotsikko</h2>
+          <p>
+            Kun kuva on pienempi, tekstille jää enemmän tilaa. Sopii esimerkiksi
+            logoille, ikoneille tai henkilökuville.
+          </p>
+        </div>
+        <figure>
+          <img src="img/c2d3675cd85c3c67.jpeg"" alt="Kuvaile tähän, mitä kuvassa näkyy" />
+          <figcaption>Kuvateksti</figcaption>
+        </figure>
+      </section>
+
+      <!-- ===== KOHTA: pelkkä teksti ===== -->
+      <section class="kohta">
+        <div class="teksti">
+          <h2>Kohta ilman kuvaa</h2>
+          <p>Jos kohdassa ei ole kuvaa, teksti käyttää koko leveyden.</p>
+        </div>
+      </section>
+
+      <!-- ===== LEVEÄ KUVA koko sivun levyisenä ===== -->
+      <figure class="levea-kuva">
+        <img src="img/c2d3675cd85c3c67.jpeg"" alt="Kuvaile tähän, mitä kuvassa näkyy" />
+        <figcaption>
+          Leveä kuva sopii esimerkiksi maisemiin tai kaavioihin.
+        </figcaption>
+      </figure>
+
+      <!-- ===== LÄHTEET ===== -->
+      <section class="lahteet">
+        <h2>Lähteet</h2>
+        <ul>
+          <li>
+            Tekijä, Sivun tai teoksen nimi. Julkaisija, vuosi.
+            <a href="https://example.com">https://example.com</a>
+          </li>
+          <li>Kuvat: Kuvaajan nimi / kuvapankki, lisenssi</li>
+        </ul>
+      </section>
     </main>
-    <footer>Sivuston nimi &copy; 2026</footer>
+
+    <footer>
+      <p>Tekijä: Oma nimi · 2026</p>
+    </footer>
   </body>
 </html>
